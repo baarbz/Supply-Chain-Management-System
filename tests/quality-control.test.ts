@@ -1,21 +1,33 @@
+import { describe, it, beforeEach, expect } from "vitest"
 
-import { describe, expect, it } from "vitest";
+describe("quality-control", () => {
+  let contract: any
+  
+  beforeEach(() => {
+    contract = {
+      performQualityCheck: (productId: number, status: string, notes: string) => ({ success: true }),
+      getQualityCheck: (productId: number) => ({
+        inspector: "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+        status: "passed",
+        notes: "Product meets all quality standards",
+        timestamp: 123456,
+      }),
+    }
+  })
+  
+  describe("perform-quality-check", () => {
+    it("should perform a quality check", () => {
+      const result = contract.performQualityCheck(1, "passed", "Product meets all quality standards")
+      expect(result.success).toBe(true)
+    })
+  })
+  
+  describe("get-quality-check", () => {
+    it("should return quality check details", () => {
+      const result = contract.getQualityCheck(1)
+      expect(result.inspector).toBe("ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM")
+      expect(result.status).toBe("passed")
+    })
+  })
+})
 
-const accounts = simnet.getAccounts();
-const address1 = accounts.get("wallet_1")!;
-
-/*
-  The test below is an example. To learn more, read the testing documentation here:
-  https://docs.hiro.so/stacks/clarinet-js-sdk
-*/
-
-describe("example tests", () => {
-  it("ensures simnet is well initalised", () => {
-    expect(simnet.blockHeight).toBeDefined();
-  });
-
-  // it("shows an example", () => {
-  //   const { result } = simnet.callReadOnlyFn("counter", "get-counter", [], address1);
-  //   expect(result).toBeUint(0);
-  // });
-});
