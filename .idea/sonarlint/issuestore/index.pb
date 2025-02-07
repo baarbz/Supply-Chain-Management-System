@@ -11,3 +11,5 @@ N
 tests/product-tracking.test.ts,d/6/d632868ea709d2873da9e86c6514281cd101b502
 N
 contracts/quality-control.clar,3/9/395d49d7e76470efd260856fe2be7a934380457a
+M
+tests/quality-control.test.ts,f/c/fcfdc468f6271d64d3e1c0b790a6d90cb48dbd42
