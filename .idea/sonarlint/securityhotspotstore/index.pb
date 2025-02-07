@@ -13,3 +13,5 @@ N
 contracts/quality-control.clar,3/9/395d49d7e76470efd260856fe2be7a934380457a
 M
 tests/quality-control.test.ts,f/c/fcfdc468f6271d64d3e1c0b790a6d90cb48dbd42
+T
+$contracts/supplier-verification.clar,1/e/1eeafa16bd5f2c0aa8a2cf22d6d886e3463492c6
